@@ -11,6 +11,7 @@
 
 ### Inspired by [RunCat_for_windows](https://github.dev/pansila/RunPet)
 # Demo
+![Demo](src/assets/demo.gif)
 
 # Contributors
 
