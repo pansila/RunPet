@@ -1,7 +1,7 @@
 {
   "build": {
-    "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "yarn dev",
+    "beforeBuildCommand": "yarn build",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
     "withGlobalTauri": false
@@ -34,7 +34,15 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://github.com/pansila/windows/x86_64/v0.0.1"
+      ],
+      "dialog": true,
+      "pubkey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFiJbsHbS4MHiOJUtVv7vliFdjw4B0uk/DzqDbqtXjYN6x0gPq0fJvA6KdRI++DwqYixtx+V+W2HPfeCyjsgHC7Fp1Dtz186TMm+VRVugnmjh9m11pxcAscwCULV11kBTR3cg3vi4PI7HS2fpIgzHwjUVaO3yoDpPmZrDfqjGiAaDKF86jSUBrUXzXlgEINXEWOeVL2zX4H3Cy46TboE34WxEY349EL9yuD8lNr3i9AO2c6zVqv0num9p8D0PpPiSKoGx4l8tfSRyrQvhaljOocbZnyCeWrL5rB7tfxfrfxzugvLO9/xRNWrPXoZD8HzwHDT2aEBPI6dfIGK5OvtCu+CTLRN3BXmru0Lp7dy+LN1l31Tcnn1IwcsHcALstnJhSZXlN5GDmodzPXMO73/674WcAxJ7TVRRanRfFFIG2/zCoX17Y0PmY3i26iYeWDWWhE/MDLD43eSK3mckWJ8VGC3eZrWKtY9WKGLIqVaTXu4aP2EQyu1wORnmvovya4d0= lin@DESKTOP-STUDY",
+      "windows": {
+        "installMode": "passive"
+      }
     },
     "windows": [
       {
