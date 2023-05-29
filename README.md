@@ -1,6 +1,6 @@
 # RunPet
 
-**A cute running pet animation on your desktop tray, supporting major desktop platforms.**
+**A cute running pet animation on your desktop tray, with cross-platform support.**
 
 [![Github issues](https://img.shields.io/github/issues/pansila/RunPet)](https://github.com/pansila/RunPet/issues)
 [![Github forks](https://img.shields.io/github/forks/pansila/RunPet)](https://github.com/pansila/RunPet/network/members)
