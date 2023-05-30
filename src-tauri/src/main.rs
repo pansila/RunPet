@@ -105,12 +105,12 @@ fn main() {
                 let mut sys = System::new_all();
                 let mut acc_time = 2800_usize;  /* 200ms required to get an accurate result */
                 let mut selected = *_pet_selected.read().unwrap();
+                let mut interval = 200_f64;
 
                 sys.refresh_cpu();
 
                 loop {
                     for icon in &(*_pets.read().unwrap())[selected].dark_icons {
-                        let mut interval = 200_f64;
                         if acc_time >= 3000 {
                             sys.refresh_cpu();
                             let cpu_usage = sys.cpus().iter().map(|cpu| cpu.cpu_usage()).sum::<f32>() as f64 / sys.cpus().len() as f64;
