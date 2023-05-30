@@ -122,7 +122,11 @@ fn main() {
                         }
                         _app.tray_handle().set_icon(icon.clone()).unwrap();
                         std::thread::sleep(Duration::from_millis(interval as u64));
-                        selected = *_pet_selected.read().unwrap();
+                        let _selected = *_pet_selected.read().unwrap();
+                        if selected != _selected {
+                            selected = _selected;
+                            break;
+                        }
                         acc_time += interval as usize;
                     }
                 }
