@@ -1,6 +1,6 @@
 [package]
 name = "run_pet"
-version = "0.0.1"
+version = "0.0.2"
 description = "A Tauri App"
 authors = ["you"]
 license = ""
@@ -22,3 +22,10 @@ sysinfo = "0.29.0"
 # this feature is used for production builds or when `devPath` points to the filesystem
 # DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]
+
+[target.'cfg(windows)'.dependencies.windows-sys]
+version = "0.48"
+features = [
+    "Win32_Foundation",
+    "Win32_System_Registry",
+]

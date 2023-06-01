@@ -2310,13 +2310,14 @@ dependencies = [
 
 [[package]]
 name = "run_pet"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "serde",
  "serde_json",
  "sysinfo",
  "tauri",
  "tauri-build",
+ "windows-sys 0.48.0",
 ]
 
 [[package]]
