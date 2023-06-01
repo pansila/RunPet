@@ -147,11 +147,13 @@ fn main() {
     let setting = CustomMenuItem::new("setting".to_string(), "Setting");
     let mut sub_pet_menu = SystemTrayMenu::new();
 
-    for pet in &*pets.read().unwrap() {
+    for (idx, pet) in (*pets.read().unwrap()).iter().enumerate() {
         let mut title = pet.name.to_string();
         title.make_ascii_uppercase();
 
-        sub_pet_menu = sub_pet_menu.add_item(CustomMenuItem::new(pet.name.to_string(), title));
+        let mut menu = CustomMenuItem::new(pet.name.to_string(), title);
+        if idx == 0 { menu = menu.selected(); }
+        sub_pet_menu = sub_pet_menu.add_item(menu);
     }
 
     let pet_menu = SystemTraySubmenu::new("Pet", sub_pet_menu);
@@ -255,9 +257,10 @@ fn main() {
                 }
                 _ => {
                     for (idx, pet) in pets.read().unwrap().iter().enumerate() {
+                        app.tray_handle().get_item(pet.name.as_str()).set_selected(false).unwrap();
                         if pet.name == id {
                             *pet_selected.write().unwrap() = idx;
-                            break;
+                            app.tray_handle().get_item(pet.name.as_str()).set_selected(true).unwrap();
                         }
                     }
                 }
